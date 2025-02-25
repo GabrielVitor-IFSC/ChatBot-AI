@@ -22,6 +22,10 @@ Código de criação de um chatbot
 
     prompt = st.chat_input("Pergunte aqui")
 
+    with st.sidebar:
+    if st.button("Limpar histórico de mensagens"):
+        st.session_state.messages = []
+    
     if prompt:
         with st.chat_message("user"):
             st.markdown(prompt)
